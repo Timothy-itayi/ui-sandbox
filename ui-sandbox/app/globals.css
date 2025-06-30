@@ -24,3 +24,35 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* styles/ProductGrid.module.css */
+
+.gridWrapper {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  justify-content: center;
+}
+
+/* Mobile: 2 columns */
+@media (max-width: 639px) {
+  .gridWrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Tablet: 2 columns, wider layout */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .gridWrapper {
+    grid-template-columns: repeat(2, 300px);
+    justify-content: center;
+  }
+}
+
+/* Desktop: 5 or 6 columns */
+@media (min-width: 1024px) {
+  .gridWrapper {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
